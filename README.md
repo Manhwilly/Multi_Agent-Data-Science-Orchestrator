@@ -1,7 +1,3 @@
-<div align="center">
-<img width="1200" height="475" alt="Multi-Agent Data Science Orchestrator" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
 # Multi-Agent Data Science Orchestrator
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
