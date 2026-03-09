@@ -1,170 +1,140 @@
-# Multi-Agent Data Science Orchestrator
+🤖 Autonomous Multi-Agent Data Science Orchestrator
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
+A sophisticated multi-agent system designed for end-to-end data science workflows. It enables seamless collaboration between 6 specialised AI-powered agents to automate data profiling, predictive modelling, and ROI analysis.
 
-A sophisticated multi-agent system designed for data science workflows, enabling seamless collaboration between AI-powered agents. Supports integration with external AI APIs (like Google Gemini) and local model execution via Ollama, providing flexible deployment options for data analysis, visualization, and orchestration.
+Supports integration with external AI APIs (Google Gemini) and local, privacy-first model execution via Ollama.
 
-## 🌟 Features
+🌟 Core Features
 
-- **Multi-Agent Orchestration**: Coordinate multiple AI agents for complex data science tasks
-- **Dual Model Support**: Integrate with cloud AI APIs (Gemini) and local models (Ollama)
-- **Interactive Dashboard**: Real-time visualization of agent activities and pipeline progress
-- **Data Pipeline Management**: Build and monitor data processing workflows
-- **Database Integration**: Connect to various databases for data sourcing
-- **File Upload & Parsing**: Support for CSV, JSON, and other data formats
-- **Experiment Tracking**: Log and analyze different agent configurations and results
-- **Chat Interface**: Natural language interaction with the agent team
-- **Responsive UI**: Modern, intuitive interface built with React and Tailwind CSS
+Multi-Agent Orchestration: Coordinate a specialised team of AI agents for complex data science tasks.
 
-## 🚀 Quick Start
+Dual Model Support: Switch seamlessly between cloud AI APIs (Gemini) and local, private models (Ollama).
 
-### Prerequisites
+Interactive Dashboard: Real-time visualisation of agent activities, thought processes, and pipeline progress.
 
-- **Node.js** (version 18 or higher)
-- **npm** or **yarn**
-- For local model support: [Ollama](https://ollama.ai/) installed and running
-- For Gemini API: A valid Google Gemini API key
+Data Pipeline Management: Build, monitor, and execute data processing workflows.
 
-### Installation
+Database & File Integration: Connect to various databases or upload CSV/JSON files directly.
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Manhwilly/Multi_Agent-Data-Science-Orchestrator.git
-   cd Multi_Agent-Data-Science-Orchestrator
-   ```
+Experiment Tracking: Log, compare, and analyse different agent configurations and output results.
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+Chat Interface: Natural language interaction with the agent team.
 
-3. **Set up environment variables:**
-   Create a `.env.local` file in the root directory:
-   ```env
-   GEMINI_API_KEY=your_gemini_api_key_here
-   OLLAMA_BASE_URL=http://localhost:11434  # Default Ollama URL
-   ```
+🧠 The Agent Team
 
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+This system utilises a specialised 6-agent architecture to mimic a real-world Data Science department:
 
-5. **Open your browser:**
-   Navigate to `http://localhost:3000` to access the application.
+Orchestrator Agent (Team Lead): Understands intent, breaks down complex requests, and routes tasks.
 
-## 📖 Usage
+Data Engineer Agent: Profiles data, cleans, preprocesses, and reports quality issues.
 
-### Getting Started
+Machine Learning Scientist Agent: Proposes modelling approaches, justifies mathematical choices, and defines evaluation metrics.
 
-1. **Select a Workspace**: Choose from available workspaces or create a new one.
-2. **Connect Data Sources**: Upload files or connect to databases via the Data Sources tab.
-3. **Configure Agents**: Set up your agent team in the Agent Team view.
-4. **Run Experiments**: Execute data science tasks through the chat interface or pipeline builder.
+Analytics & Visualisation Agent: Generates EDA visuals and highlights key patterns.
 
-### Key Components
+Cloud & MLOps Engineer Agent: Prepares deployment architecture and suggests scalable pipelines.
 
-- **Dashboard**: Overview of agent activities, metrics, and current status
-- **Pipeline View**: Visual representation of data processing stages
-- **Chat Input**: Natural language commands to agents
-- **Data Sources**: Manage files, databases, and data connections
-- **Experiments**: Track and compare different runs
-- **History**: Log of all actions and results
+Business Translator Agent: Translates technical model outputs into actionable business insights and ROI estimates.
 
-### Working with Models
+🏗️ Architecture
 
-#### Using Gemini API
-- Ensure your `GEMINI_API_KEY` is set in `.env.local`
-- The system will automatically route requests to Gemini for cloud-based processing
+The application is built with a highly modular, decoupled architecture:
 
-#### Using Ollama (Local Models)
-- Install and start Ollama on your machine
-- Pull desired models: `ollama pull llama2` (or your preferred model)
-- The system will detect local models and use them for inference
+Frontend: React with TypeScript, styled with Tailwind CSS. Visualisations powered by Recharts.
 
-## 🏗️ Architecture
+Backend Services: Express.js for scalable API endpoints.
 
-The application is built with a modular architecture:
+AI Integration (modelRouter.ts): Flexible model router supporting multiple AI providers.
 
-- **Frontend**: React with TypeScript, styled with Tailwind CSS
-- **Backend Services**: Express.js for API endpoints
-- **AI Integration**: Flexible model router supporting multiple AI providers
-- **Data Management**: SQLite for local storage, extensible to other databases
-- **Visualization**: Recharts for data visualization components
+Data Management (dataParser.ts): SQLite for local storage, built to be extensible to enterprise databases.
 
-### Core Services
+🚀 Quick Start
 
-- `geminiService.ts`: Handles interactions with Google Gemini API
-- `modelRouter.ts`: Routes requests between different AI models
-- `dataParser.ts`: Processes and transforms input data
+Prerequisites
 
-## 🔧 Configuration
+Node.js (version 18 or higher)
 
-### Environment Variables
+npm or yarn
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `GEMINI_API_KEY` | Your Google Gemini API key | Required for Gemini |
-| `OLLAMA_BASE_URL` | Ollama server URL | `http://localhost:11434` |
-| `PORT` | Server port | `3000` |
+Optional: Ollama installed and running (for local models)
 
-### Build Configuration
+Optional: A valid Google Gemini API key (for cloud models)
 
-- **Vite**: For fast development and optimized production builds
-- **TypeScript**: Strict type checking enabled
-- **ESLint**: Code quality enforcement
+Installation
 
-## 🤝 Contributing
+Clone the repository:
 
-We welcome contributions! Please follow these steps:
+git clone [https://github.com/Manhwilly/Multi_Agent-Data-Science-Orchestrator.git](https://github.com/Manhwilly/Multi_Agent-Data-Science-Orchestrator.git)
+cd Multi_Agent-Data-Science-Orchestrator
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Submit a pull request
 
-### Development Setup
+Install dependencies:
 
-```bash
-# Install dependencies
 npm install
 
-# Run in development mode
+
+Set up environment variables:
+Create a .env.local file in the root directory:
+
+GEMINI_API_KEY=your_gemini_api_key_here
+OLLAMA_BASE_URL=http://localhost:11434  # Default Ollama URL
+PORT=3000
+
+
+Start the development server:
+
 npm run dev
 
-# Build for production
-npm run build
 
-# Preview production build
-npm run preview
+Navigate to http://localhost:3000 to access the application.
 
-# Run type checking
-npm run lint
-```
+📖 Usage Guide
 
-## 📄 License
+Select a Workspace: Choose from available workspaces or create a new one for your project.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Connect Data Sources: Upload your CSV/JSON files or connect to databases via the Data Sources tab.
 
-## 🙏 Acknowledgments
+Configure Agents: Set up your agent team (Local vs. Cloud) in the Agent Team view.
 
-- Built with [React](https://reactjs.org/) and [Vite](https://vitejs.dev/)
-- AI integration powered by [Google Gemini](https://ai.google.dev/) and [Ollama](https://ollama.ai/)
-- UI components styled with [Tailwind CSS](https://tailwindcss.com/)
-- Icons from [Lucide React](https://lucide.dev/)
+Run Experiments: Execute data science tasks through the natural language chat interface and watch the Orchestrator delegate tasks.
 
-## 📞 Support
+Working with Models
 
-If you encounter any issues or have questions:
+Using Gemini API: Ensure your GEMINI_API_KEY is set. The system will automatically route heavy reasoning tasks to the cloud.
 
-1. Check the [Issues](https://github.com/Manhwilly/Multi_Agent-Data-Science-Orchestrator/issues) page
-2. Create a new issue with detailed information
-3. Join our community discussions
+Using Ollama (Local/Private): Install Ollama, pull your desired model (e.g., ollama pull llama2), and the system will detect and utilize local models for privacy-first inference.
 
----
+🤝 Contributing
 
-**Happy orchestrating! 🚀**
+We welcome contributions from the community!
+
+Fork the repository
+
+Create a feature branch: git checkout -b feature/your-feature
+
+Commit your changes: git commit -am 'Add some feature'
+
+Push to the branch: git push origin feature/your-feature
+
+Submit a pull request
+
+Development Commands
+
+npm install       # Install dependencies
+npm run dev       # Run in development mode
+npm run build     # Build for production
+npm run preview   # Preview production build
+npm run lint      # Run type checking
+
+
+📄 License & Acknowledgments
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Built with React and Vite.
+
+AI integration powered by Google Gemini and Ollama.
+
+UI components styled with Tailwind CSS, icons from Lucide React.
+
+📞 Support: If you encounter any issues, please check the Issues page or open a new ticket with detailed information. Happy orchestrating! 🚀
